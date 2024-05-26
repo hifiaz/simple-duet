@@ -64,10 +64,10 @@ class _HomeState extends State<Home> {
                 ShadButton(
                   onPressed: () {
                     showShadSheet(
-                      side: ShadSheetSide.left,
+                      side: ShadSheetSide.bottom,
                       context: context,
                       builder: (context) =>
-                          const IncomeSheet(side: ShadSheetSide.left),
+                          const IncomeSheet(side: ShadSheetSide.bottom),
                     );
                   },
                   text: const Text('Pemasukan'),
@@ -82,10 +82,10 @@ class _HomeState extends State<Home> {
                 ShadButton(
                   onPressed: () {
                     showShadSheet(
-                      side: ShadSheetSide.right,
+                      side: ShadSheetSide.bottom,
                       context: context,
                       builder: (context) =>
-                          const ExpensesSheet(side: ShadSheetSide.right),
+                          const ExpensesSheet(side: ShadSheetSide.bottom),
                     );
                   },
                   text: const Text('Pengeluaran'),

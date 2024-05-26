@@ -38,6 +38,13 @@ class _IncomeSheetState extends State<IncomeSheet> {
   }
 
   @override
+  void dispose() {
+    _income.dispose();
+    _note.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final categories = categoryController.categories.watch(context);
     return ShadSheet(
