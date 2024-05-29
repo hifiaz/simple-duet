@@ -128,7 +128,7 @@ class _HomeState extends State<Home> {
                 return Column(
                   children: ListTile.divideTiles(
                     context: context,
-                    tiles: item.map(
+                    tiles: item.reversed.map(
                       (i) => ListTile(
                         title: Text(
                           currency.format(i.income ?? i.expenses),

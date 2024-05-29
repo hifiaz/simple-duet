@@ -1,3 +1,4 @@
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
@@ -66,7 +67,11 @@ class _ExpensesSheetState extends State<ExpensesSheet> {
                 label: const Text('Pengeluaran'),
                 placeholder: const Text('cth: 500000'),
                 keyboardType: TextInputType.number,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  CurrencyTextInputFormatter.currency(
+                      locale: 'id', decimalDigits: 0, symbol: 'IDR ')
+                ],
                 validator: (v) {
                   if (v.length < 2) {
                     return 'Masukkan angka yang benar';
@@ -131,7 +136,9 @@ class _ExpensesSheetState extends State<ExpensesSheet> {
                 if (widget.item != null) {
                   final item = ItemModel()
                     ..id = widget.item!.id
-                    ..expenses = int.parse(_expenses.text)
+                    ..expenses = int.parse(_expenses.text
+                        .replaceAll('IDR', '')
+                        .replaceAll('.', ''))
                     ..description = _note.text
                     ..title = 'Expenses'
                     ..category = selected.title
@@ -141,7 +148,9 @@ class _ExpensesSheetState extends State<ExpensesSheet> {
                   if (context.mounted) Navigator.pop(context);
                 } else {
                   final item = ItemModel()
-                    ..expenses = int.parse(_expenses.text)
+                    ..expenses = int.parse(_expenses.text
+                        .replaceAll('IDR', '')
+                        .replaceAll('.', ''))
                     ..description = _note.text
                     ..title = 'Expenses'
                     ..category = selected.title

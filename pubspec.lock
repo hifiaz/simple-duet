@@ -193,6 +193,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  currency_text_input_formatter:
+    dependency: "direct main"
+    description:
+      name: currency_text_input_formatter
+      sha256: d2eed8c7d40520729ac38252368954aba430a7ee510e5d5357e45cde1f6417a6
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.3"
   dart_style:
     dependency: transitive
     description:
@@ -620,10 +628,10 @@ packages:
     dependency: "direct main"
     description:
       name: shadcn_ui
-      sha256: "26290e1857d452bf78ce3530faee860fabbda0a1c1a4638fd29298c138a5628f"
+      sha256: "3e44bf2cf231de4b9c25cab776abc7ccc194866b3aefe60fcf1ebe1fbc9e9053"
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.1"
+    version: "0.5.2"
   shelf:
     dependency: transitive
     description:
